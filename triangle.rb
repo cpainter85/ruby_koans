@@ -15,6 +15,10 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  raise TriangleError if [a,b,c].min <= 0
+  sides = (a+b+c)/2.0
+  valid = (sides - a)*(sides-b)*(sides-c)
+  raise TriangleError if valid <=0
   if a == b && a ==c && b ==c
     :equilateral
   elsif a == b || a == c || b == c
